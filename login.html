@@ -152,7 +152,7 @@
         </form>
 
         <div class="login-divider" aria-hidden="true"><span>or</span></div>
-        <button type="button" class="google-signin-btn" id="googleSignInBtn">
+        <button type="button" class="google-signin-btn" id="googleSignInBtn" data-auth-provider="Google">
           <svg viewBox="0 0 48 48" aria-hidden="true">
             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"/>
             <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.76 7.18l7.73 6C44.42 38.05 47 31.9 47 24.55h-.02Z"/>
@@ -161,6 +161,20 @@
           </svg>
           <span>Continue with Google</span>
         </button>
+        <div class="social-signin-options" aria-label="More sign-in options">
+          <button type="button" class="social-signin-option" data-auth-provider="Apple" aria-label="Continue with Apple" title="Continue with Apple">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.2c.02 2.12 1.86 2.83 1.88 2.84-.02.05-.29 1.01-.97 2-.58.84-1.19 1.68-2.14 1.7-.94.02-1.24-.55-2.32-.55s-1.42.53-2.31.57c-.93.03-1.64-.91-2.22-1.75-1.19-1.73-2.1-4.88-.88-7 .6-1.05 1.67-1.72 2.83-1.74.88-.02 1.71.6 2.25.6.54 0 1.55-.74 2.61-.63.44.02 1.67.18 2.46 1.34-.06.04-1.47.86-1.45 2.62zM14.66 6.95c.48-.58.81-1.38.72-2.18-.7.03-1.54.47-2.04 1.05-.45.52-.84 1.33-.73 2.11.78.06 1.57-.4 2.05-.98z"/></svg>
+            <span>Apple</span>
+          </button>
+          <button type="button" class="social-signin-option" data-auth-provider="Microsoft" aria-label="Continue with Microsoft" title="Continue with Microsoft">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg>
+            <span>Microsoft</span>
+          </button>
+          <button type="button" class="social-signin-option" data-auth-provider="Facebook" aria-label="Continue with Facebook" title="Continue with Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877f2" d="M24 12a12 12 0 1 0-13.88 11.85v-8.39H7.08V12h3.04V9.36c0-3 1.79-4.66 4.53-4.66 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.46h-2.79v8.39A12 12 0 0 0 24 12z"/></svg>
+            <span>Facebook</span>
+          </button>
+        </div>
 
         <div class="login-footer-text">
           <span>Need client portal access? <a href="contact.html">Request Credential Onboarding</a></span>

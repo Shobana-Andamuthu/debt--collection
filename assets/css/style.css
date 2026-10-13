@@ -3212,7 +3212,7 @@ p {
   justify-content: space-between;
   gap: 0.75rem;
   min-height: var(--header-height);
-  padding: 0.75rem max(var(--container-padding), calc((100vw - var(--container-max-width)) / 2 + var(--container-padding)));
+  padding: 0.75rem var(--container-padding);
   background-color: var(--bg-surface);
   border-bottom: 1px solid var(--border-color);
 }
@@ -3337,8 +3337,15 @@ p {
 .login-visual-footer {
   position: relative;
   z-index: 2;
-  font-size: 0.78rem;
-  color: #94a3b8;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(11, 25, 44, 0.72);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .login-form-panel {
@@ -3406,7 +3413,8 @@ p {
   background-color: var(--border-color);
 }
 
-.google-signin-btn {
+.google-signin-btn,
+.social-signin-option {
   width: 100%;
   min-height: 46px;
   display: inline-flex;
@@ -3425,13 +3433,15 @@ p {
   transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.google-signin-btn:hover {
+.google-signin-btn:hover,
+.social-signin-option:hover {
   background-color: var(--bg-subtle);
   border-color: var(--border-hover);
   box-shadow: var(--shadow-sm);
 }
 
-.google-signin-btn:focus-visible {
+.google-signin-btn:focus-visible,
+.social-signin-option:focus-visible {
   outline: 2px solid var(--border-focus);
   outline-offset: 2px;
 }
@@ -3440,6 +3450,31 @@ p {
   width: 18px;
   height: 18px;
   flex: 0 0 18px;
+}
+
+.social-signin-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+}
+
+.social-signin-option {
+  min-width: 0;
+  min-height: 42px;
+  gap: 0.4rem;
+  padding: 0.5rem 0.4rem;
+  font-size: 0.75rem;
+}
+
+.social-signin-option svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+.social-signin-option:first-child svg {
+  fill: currentColor;
 }
 
 .password-input-wrap {
@@ -4795,6 +4830,49 @@ p {
 .footer-bottom-bar p {
   font-size: 0.78rem;
   color: #64748b;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: #94a3b8;
+  border-radius: 50%;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-social-links a:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social-links svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+}
+
+.footer-social-links a:nth-child(2) svg,
+.footer-social-links a:nth-child(3) svg,
+.footer-social-links a:nth-child(4) svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-social-links .social-icon-fill {
+  fill: currentColor;
+  stroke: none;
 }
 
 .footer-legal-links {

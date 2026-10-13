@@ -363,17 +363,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const googleSignInBtn = document.getElementById('googleSignInBtn');
-  if (googleSignInBtn) {
-    googleSignInBtn.addEventListener('click', () => {
+  const socialSignInButtons = document.querySelectorAll('[data-auth-provider]');
+  socialSignInButtons.forEach((button) => {
+    button.addEventListener('click', () => {
       if (loginStatusMsg) {
         loginStatusMsg.style.display = 'block';
         loginStatusMsg.style.backgroundColor = 'var(--error-bg)';
         loginStatusMsg.style.color = 'var(--error)';
-        loginStatusMsg.textContent = 'Google sign-in is not configured for this portal yet. Please sign in with your business email and password.';
+        loginStatusMsg.textContent = `${button.dataset.authProvider} sign-in is not configured for this portal yet. Please sign in with your business email and password.`;
       }
     });
-  }
+  });
 
   // 9. Dashboard: Sidebar Navigation & Drawer
   const dashHamburgerBtn = document.getElementById('dashHamburgerBtn');
